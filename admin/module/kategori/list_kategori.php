@@ -53,7 +53,7 @@
                         <a href="<?php echo $admin_url; ?>module/kategori/aksi_hapus.php?id_kategori=<?php echo $data['id_kategori'];?>"
                           onClick="return confirm('Anda yakin ingin menghapus data ini?')"><button
                             class="btn btn-block btn-danger btn-sm" type="button"><i
-                              class="nav-icon icon-power"></i></button></a>
+                              class="nav-icon icon-trash"></i></button></a>
                       </div>
                     </td>
 

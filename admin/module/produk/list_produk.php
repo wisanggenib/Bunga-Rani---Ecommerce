@@ -54,7 +54,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                         <tr>
                           <td><?php echo $mem['bunga']; ?></td>
                           <td><?php echo $mem['harga']; ?></td>
-                          <td><?php echo $mem['gambar']; ?></td>
+                          <td> <img src="../asset/images/produk/<?php echo $mem['gambar']; ?>" alt="" width="100px" height="120px"></td>
                           <td><?php echo $mem['nama_kategori']; ?></td>
 
                           

@@ -37,9 +37,9 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                       <thead>
                         <tr>
                           <th>Bunga</th>
-                          <th>Warna</th>
                           <th>harga</th>
                           <th>gambar</th>
+                          <th>Kategori</th>
                           <th>Aksi</th>
 
                         </tr>
@@ -48,14 +48,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                             <?php
                         include "../lib/config.php";
                         include "../lib/koneksi.php";
-                        $kueriproduk= mysqli_query($host, "SELECT * from produk");
+                        $kueriproduk= mysqli_query($host, "SELECT * from produk join kategori ON produk.id_kategori = kategori.id_kategori");
                         while($mem=mysqli_fetch_array($kueriproduk, MYSQLI_ASSOC)){
                         ?>
                         <tr>
                           <td><?php echo $mem['bunga']; ?></td>
-                          <td><?php echo $mem['warna']; ?></td>
                           <td><?php echo $mem['harga']; ?></td>
                           <td><?php echo $mem['gambar']; ?></td>
+                          <td><?php echo $mem['nama_kategori']; ?></td>
 
                           
                         <td>
@@ -72,7 +72,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                       </tbody>
                     </table>
                     <ul class="pagination">
-                      <li class="page-item">
+                      <li class="page-item" style="margin-right:20px;">
                         <a href="<?php echo $base_url; ?>/admin/adminweb.php?module=tambah_produk"><button class="btn btn-block btn-primary" type="button">Tambah produk</button></a>
                       </li>
                       <li class="page-item active">

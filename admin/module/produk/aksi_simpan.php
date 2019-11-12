@@ -25,19 +25,22 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 // untuk memasukkan file config.php dan file koneksi.php
     include "../../../lib/config.php";
     include "../../../lib/koneksi.php";
+// memindahkan file ke dalam folder images/produk
+    $nameFile=$_FILES['gambar']['name'];
+    $file=$_FILES['gambar']['tmp_name'];
+    move_uploaded_file($file,"../../../asset/images/produk/$nameFile");    
 // untuk menangkap variabel 'namaKategori' yang dikirim oleh form_tambah.php
     $bunga = $_POST['bunga'];
-	$warna = $_POST['warna'];
-    $gambar = $_POST['gambar'];
     $harga = $_POST['harga'];
+    $kategori = $_POST['kategori'];
 // query untuk menyimpan ke tabel tbl_layanan
-    $querySimpan = mysqli_query($host, "INSERT INTO produk (bunga, warna, no_ref, harga) VALUES ('$bunga', '$warna', '$gambar', '$harga')");
+    $querySimpan = mysqli_query($host, "INSERT INTO produk (bunga, gambar, harga,id_kategori) VALUES ('$bunga', '$nameFile', '$harga',$kategori)");
 // jika query berhasil maka akan tampil alert dan halaman akan kembali ke daftar layanan
     if ($querySimpan) {
         echo "<script> alert('Data Produk Berhasil Masuk'); window.location = '$admin_url'+'adminweb.php?module=produk';</script>";
 // jika query gagal, akan tampil alert dan halaman akan diarahkan ke form tambah layanan
     } else {
-        echo "<script> alert('Data Produk Gagal Dimasukkan'); window.location = '$admin_url'+'adminweb.php?module=tambah_produk';</script>";
+       echo "<script> alert('Data Produk Gagal Dimasukkan'); window.location = '$admin_url'+'adminweb.php?module=tambah_produk';</script>";
     }
 }
 ?>

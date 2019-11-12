@@ -250,7 +250,7 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
             } elseif ($_GET['module'] == 'tambah_kategori') {
                 include "module/kategori/form_tambah.php";
             } elseif ($_GET['module'] == 'edit_kategori') {
-              include "module/kategori/form_edit.php";
+                include "module/kategori/form_edit.php";
             }
 
             //default

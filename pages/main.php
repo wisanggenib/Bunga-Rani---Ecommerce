@@ -208,9 +208,7 @@
                             <div class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 roar"
                                 style="margin-top :5px;">
 
-                                <button type="button" class="" data-toggle="modal"
-                                    data-target="#<?php echo $row['Id_produk']; ?>" style="color:white;">Open
-                                    Modal</button>
+                                <a href="produk-detail.php?Id_produk=<?php echo $row['Id_produk']; ?>"><button type="button" class="" style="color:white;">Pesan Sekarang</button></a>
                             </div>
 
                             <style type="text/css">
@@ -234,52 +232,7 @@
 
     </div>
 </section>
-<!-- Trigger the modal with a button -->
-				<?php 
 
-				$sql = "SELECT * FROM produk";
-				$result = $koneksi->query($sql);
-				while($row = $result->fetch_assoc()){
-
-					 ?>
-
-<!-- Modal -->
-<div id="<?php echo $row['Id_produk']; ?>" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Produk - <?php echo $row['bunga']; ?></h4>
-            </div>
-            <div class="modal-body">
-                <form method='post' action="modul/pesan.php">
-
-                    <div class="form-group">
-                        <label for="email">Id_Produk:</label>
-                        <input type="number" class="form-control" id="disabledInput" placeholder="Enter email"
-                            name="produk" value="<?php echo $row['Id_produk']; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="number" class="form-control" id="jumlah" placeholder="Enter email" name="jumlah">
-                    </div>
-
-                    <button type="submit" class="btn btn-default">Pesan</button>
-                </form>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<?php  } ?>
 
 <!-- Banner2 -->
 <section class="banner2 bg5 p-t-55 p-b-55">

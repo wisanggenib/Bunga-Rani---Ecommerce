@@ -1,4 +1,4 @@
 <?php
-include 'lib/koneksi.php';
-$host;
+echo $_POST['num-product'];
+
 ?>

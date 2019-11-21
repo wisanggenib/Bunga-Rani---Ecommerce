@@ -42,7 +42,7 @@
 							<td class="column-4" style="padding-left: 10px;"><?=$row['Alamat']?></td>
 							<td class="column-4" style="padding-left: 10px;"><?=$row['Deskripsi']?></td>
 							<td class="column-4" style="padding-left: 10px;"><?=$row['Total_bayar']?></td>
-							<td class="column-4" style="padding-left: 10px;"><a href="pembayaran.php?id=<?=$row['Id_pesanan']?>"><i class="fa fa-credit-card" aria-hidden="true" style="font-size:20px;"></i></a></td>
+							<td class="column-4" style="padding-left: 10px;"><a href="detail_pembayaran.php?id=<?=$row['Id_pesanan']?>"><i class="fa fa-credit-card" aria-hidden="true" style="font-size:20px;"></i></a></td>
 						</tr>
 						<?php
 							}

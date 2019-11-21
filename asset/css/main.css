@@ -2501,4 +2501,12 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0; 
 }
 
-
+.cart-item-image {
+	width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: #E0E0E0 1px solid;
+    padding: 5px;
+    vertical-align: middle;
+    margin-right: 15px;
+}

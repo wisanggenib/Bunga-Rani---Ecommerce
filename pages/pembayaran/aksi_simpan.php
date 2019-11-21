@@ -18,7 +18,7 @@ if (empty($_SESSION['idpelanggan']) AND empty($_SESSION['pelanggan'])) {
 
     include "../../lib/koneksi.php";
 
-    $querySimpan = mysqli_query($host, "INSERT INTO pembayaran (Tgl_pembayaran,Gambar,Id_pesanan) VALUES ('$tgl_pembayaran','$fileName','$id_pesanan')");
+    $querySimpan = mysqli_query($host, "INSERT INTO pembayaran (Tgl_pembayaran,Gambar,Id_pesanan,Status) VALUES ('$tgl_pembayaran','$fileName','$id_pesanan','pending')");
 
     $queryUpdate = mysqli_query($host, "UPDATE pesanan SET Status = 'pending' WHERE Id_pesanan = $id_pesanan ");
 

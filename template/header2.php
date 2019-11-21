@@ -182,8 +182,14 @@ include 'lib/koneksi.php';
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+									<a href="detail_pesanan.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										pemesanan
+									</a>
+								</div>
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="pembayaran.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										pembayaran
 									</a>
 								</div>
 							</div>

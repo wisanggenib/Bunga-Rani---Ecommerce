@@ -3,6 +3,7 @@
 if(empty($_SESSION['idpelanggan'])){
 echo "<script>alert('Anda Harus Login Dulu')</script>";
 echo "<script>window.location.replace('pages/login.php');</script>";
+
 }
 
 $sql = "SELECT * FROM produk JOIN kategori ON produk.id_kategori = kategori.id_kategori WHERE Id_produk = $_GET[Id_produk]";
@@ -36,12 +37,16 @@ $row = $result->fetch_assoc();
             </p> -->
 
             <!--  -->
-            <form action="testing.php" method="POST" enctype="multipart/form-data">
+            <form action="testing_cart.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" id="custId" name="Id_produk" value="<?php echo $_GET['Id_produk'] ?>">
+            <input type="hidden" id="x" name="harga" value="<?php echo $row['harga'] ?>">
+            <input type="hidden" name="nama_produk" value="<?php echo $row['nama_produk'] ?>">
+
                 <div class="p-t-33 p-b-60">
                     <div class="flex-m flex-w p-b-10">
                         <div class="form-group" style="min-width: 80%">
                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="min-width: 100%"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="deskripsi" rows="3" style="min-width: 100%"></textarea>
                         </div>
 
                     </div>
@@ -69,7 +74,7 @@ $row = $result->fetch_assoc();
                                     <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                                 </button>
 
-                                <input class="size8 m-text18 t-center num-product" type="number" name="num-product"
+                                <input class="size8 m-text18 t-center num-product" type="number" name="quantity"
                                     value="1">
 
                                 <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">

@@ -1,5 +1,7 @@
 <?php
 include 'lib/koneksi.php';
+	//initialize cart if not set or is unset
+
 ?>
 
 <!DOCTYPE html>

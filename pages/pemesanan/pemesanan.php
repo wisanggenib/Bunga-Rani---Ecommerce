@@ -73,7 +73,7 @@ include "lib/koneksi.php";
 					<h3>Detail Pemesanan</h3>
 					<div class="wrap-table-shopping-cart bgwhite">
 						
-						<form action="/action_page.php" style="background-color: gray;padding: 10px;">
+						<form action="pages/pemesanan/aksi_simpan.php" method="POST" style="background-color: gray;padding: 10px;">
 							<div class="form-group">
 								<label for="email">User :</label>
 								<?php
@@ -83,13 +83,19 @@ include "lib/koneksi.php";
 								?>
 								<input type="text" class="form-control" id="email" disabled="true" value="<?=$data['nama_depan']?>">
 							</div>
+							<!-- total bayar yang dihidden karena ketika input disabled data tidak dapat dikirim ke halaman lain -->
 							<div class="form-group">
 								<label for="email">Total Bayar :</label>
-								<input type="text" class="form-control" id="email" disabled="true" name="total" value="<?=$total_price?>">
+								<input type="number" class="form-control" value="<?=$total_price?>" disabled>
 							</div>
+
+							<div class="form-group">
+								<input type="number" class="form-control" name="total" value="<?=$total_price?>" hidden>
+							</div>
+
 							<div class="form-group">
 								<label for="pwd">Tanggal Kirim:</label>
-								<input type="date" name="tgl_kirim" class="form-control" id="pwd" required="true">
+								<input type="date" name="tgl_kirim" class="form-control" required="true">
 							</div>
 							<div class="form-group">
 								<label for="comment">Alamat:</label>

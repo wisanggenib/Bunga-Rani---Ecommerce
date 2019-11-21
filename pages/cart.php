@@ -37,13 +37,13 @@
                             <td><?php echo "Rp ". number_format($item_price,2); ?></td>
                             <td><a
                                     href="index.php?action=remove&code=<?php echo $item["id"]; ?>"
-                                    class="btnRemoveAction">Del</a></td>
+                                    class="btnRemoveAction"><i class="fa fa-trash" aria-hidden="true" style="font-size:20px;"></i></a></td>
                         </tr>
                         <?php
 								$total_quantity += $item["quantity"];
 								$total_price += ($item["harga"]*$item["quantity"]);
 							}
-		?>
+						?>
 
                         <tr style="border: 1px solid #e6e6e6;">
                             <td colspan="2" align="right">Total:</td>
@@ -56,12 +56,12 @@
                     </tbody>
                 </table>
                 <?php
-} else {
-?>
+				} else {
+				?>
                 <div class="no-records">Your Cart is Empty</div>
                 <?php 
-}
-?>
+				}
+				?>
             </div>
         </div>
         <div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">

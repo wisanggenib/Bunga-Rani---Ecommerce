@@ -67,8 +67,8 @@
 
             <div class="size12 trans-0-4 m-t-10 m-b-10">
                 <!-- Button -->
-                <a href="pembayaran.php" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-                    Bayar
+                <a href="pemesanan.php" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                    Pesan
                 </a>
             </div>
         </div>

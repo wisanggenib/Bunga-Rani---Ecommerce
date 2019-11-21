@@ -58,7 +58,7 @@ $id = $_GET['id'];
 					<h3>Upload Bukti Pembayaran</h3>
 					<div class="wrap-table-shopping-cart bgwhite">
 						
-						<form action="pages/pemesanan/aksi_simpan.php" enctype='multipart/form-data' method="POST" style="background-color: gray;padding: 10px;">
+						<form action="pages/pembayaran/aksi_simpan.php" enctype='multipart/form-data' method="POST" style="background-color: gray;padding: 10px;">
 							<div class="form-group">
 								<label for="email">User :</label>
 								<input type="text" class="form-control" id="email" disabled="true" value="<?=$data['nama_depan']?>">
@@ -67,6 +67,10 @@ $id = $_GET['id'];
 							<div class="form-group">
 								<label for="email">Total Bayar :</label>
 								<input type="number" class="form-control" value="<?=$data['Total_bayar']?>" disabled>
+							</div>
+
+							<div class="form-group">
+								<input type="number" class="form-control" name="id_pesanan" value="<?=$data['Id_pesanan']?>" hidden>
 							</div>
 
 							<div class="form-group">

@@ -15,9 +15,10 @@ if(empty($_SESSION['cart'])){
 }
 
 // $_SESSION['cart'] = $cart;
-echo "<br>========<br>";
-print_r($_SESSION['cart']);
-echo "<br>========<br>";
-print_r($cart);
+// echo "<br>========<br>";
+// print_r($_SESSION['cart']);
+// echo "<br>========<br>";
+// print_r($cart);
 
 ?>
+<meta http-equiv="refresh" content="0;URL=cart.php" />

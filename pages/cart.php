@@ -13,11 +13,11 @@
                     <tbody style="border: 1px solid #e6e6e6;" >
                         <tr style="border: 1px solid #e6e6e6;">
                             <th>Name</th>
-                            <th>Code</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Price</th>
-                            <th>Remove</th>
+                            <th>Deskripsi</th>
+                            <th style="text-align :center">Quantity</th>
+                            <th style="text-align :center">Unit Price</th>
+                            <th style="text-align :center">Price</th>
+                            <th >Remove</th>
                         </tr>
                         <?php		
     						foreach ($_SESSION["cart"] as $item){
@@ -31,12 +31,11 @@
                             <td>
 							<img src="asset/images/produk/<?php echo $hasil["gambar"]; ?>" class="cart-item-image" /><?php echo $hasil["nama_produk"]; ?>
                             </td>
-                            <td><?php echo $item["id"]; ?></td>
-                            <td><?php echo $item["quantity"]; ?></td>
-                            <td><?php echo "Rp ".$item["harga"]; ?></td>
-                            <td><?php echo "Rp ". number_format($item_price,2); ?></td>
-                            <td><a
-                                    href="index.php?action=remove&code=<?php echo $item["id"]; ?>"
+                            <td width="20%"><?php echo $item["deskripsi"]; ?></td>
+                            <td style="text-align :center"><?php echo $item["quantity"]; ?></td>
+                            <td style="text-align :center"><?php echo "Rp ".$item["harga"]; ?></td>
+                            <td style="text-align :center"><?php echo "Rp ". number_format($item_price,2); ?></td>
+                            <td style="text-align :center"><a href="delete_cart.php?nama_produk=<?php echo $hasil["nama_produk"]; ?>"
                                     class="btnRemoveAction"><i class="fa fa-trash" aria-hidden="true" style="font-size:20px;"></i></a></td>
                         </tr>
                         <?php

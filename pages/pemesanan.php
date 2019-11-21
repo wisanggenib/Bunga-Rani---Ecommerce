@@ -28,6 +28,7 @@ include "lib/koneksi.php";
 								<th class="column-3">Total</th>
 							</tr>
 							<?php
+							$total_price = 0;
 							foreach ($_SESSION['cart'] as $item) {
 								$price = $item['quantity']*$item['harga'];
 								
@@ -60,6 +61,7 @@ include "lib/koneksi.php";
 									<td class="column-3"><?=$price ?></td>
 								</tr>
 								<?php
+								$total_price += ($item["harga"]*$item["quantity"]);
 							}
 							?>
 						</table>
@@ -73,18 +75,31 @@ include "lib/koneksi.php";
 						
 						<form action="/action_page.php" style="background-color: gray;padding: 10px;">
 							<div class="form-group">
-								<label for="email">Email address:</label>
-								<input type="email" class="form-control" id="email">
+								<label for="email">User :</label>
+								<?php
+								$sql = "SELECT * FROM pelanggan  WHERE Id_pelanggan = $_SESSION[idpelanggan]";
+								$result = $koneksi->query($sql);
+								$data = $result->fetch_assoc();								
+								?>
+								<input type="text" class="form-control" id="email" disabled="true" value="<?=$data['nama_depan']?>">
 							</div>
 							<div class="form-group">
-								<label for="pwd">Password:</label>
-								<input type="password" class="form-control" id="pwd">
+								<label for="email">Total Bayar :</label>
+								<input type="text" class="form-control" id="email" disabled="true" name="total" value="<?=$total_price?>">
 							</div>
-							<div class="form-group form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox"> Remember me
-								</label>
+							<div class="form-group">
+								<label for="pwd">Tanggal Kirim:</label>
+								<input type="date" name="tgl_kirim" class="form-control" id="pwd" required="true">
 							</div>
+							<div class="form-group">
+								<label for="comment">Alamat:</label>
+								<textarea class="form-control" rows="5" id="comment" name="alamat" required="true"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="comment">Deskripsi:</label>
+								<textarea class="form-control" rows="5" id="comment" name="deskripsi" required="true"></textarea>
+							</div>
+							
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</form>
 					</div>

@@ -161,10 +161,10 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
                         <a class="nav-link" href="adminweb.php?module=pelanggan">
                             <i class="nav-icon icon-user"></i> Data Pelanggan</a>
                     </li>
-                    <li class="nav-item">
+<!--                     <li class="nav-item">
                         <a class="nav-link" href="adminweb.php?module=driver">
                             <i class="nav-icon icon-user"></i> Data Driver</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="adminweb.php?module=admin">
                             <i class="nav-icon icon-user"></i> Data Admin</a>

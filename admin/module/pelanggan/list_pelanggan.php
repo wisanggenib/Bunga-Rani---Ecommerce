@@ -38,7 +38,8 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                         <tr>
                           <th>username</th>
                           <th>password</th>
-                          <th>nama</th>
+                          <th>nama depan</th>
+                          <th>nama belakang</th>
                           <th>alamat</th>
                           <th>no_hp</th>
                           <th>email</th>
@@ -55,7 +56,8 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                         <tr>
                           <td><?php echo $mem['username']; ?></td>
                           <td><?php echo $mem['password']; ?></td>
-                          <td><?php echo $mem['nama_pelanggan']; ?></td>
+                          <td><?php echo $mem['nama_depan']; ?></td>
+                          <td><?php echo $mem['nama_belakang']; ?></td>
                           <td><?php echo $mem['alamat']; ?></td>
                           <td><?php echo $mem['no_hp']; ?></td>
                           <td><?php echo $mem['email']; ?></td>

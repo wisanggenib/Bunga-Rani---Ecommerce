@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 21, 2019 at 12:20 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: localhost
+-- Generation Time: Nov 24, 2019 at 01:13 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -68,7 +68,10 @@ INSERT INTO `detail_pesanan` (`id_detail_pesanan`, `id_pesanan`, `quantity`, `id
 (2, 52, 1, 22, 100000),
 (3, 52, 2, 23, 123),
 (4, 53, 1, 22, 100000),
-(6, 55, 3, 23, 123);
+(6, 55, 3, 23, 123),
+(7, 56, 1, 25, 30000),
+(8, 57, 4, 25, 30000),
+(9, 57, 1, 22, 50000);
 
 -- --------------------------------------------------------
 
@@ -86,10 +89,10 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(1, 'buket'),
+(1, 'buket2'),
 (2, 'rangkai'),
 (3, 'batang'),
-(5, 'Testing Update');
+(6, 'baru');
 
 -- --------------------------------------------------------
 
@@ -115,8 +118,7 @@ CREATE TABLE `pelanggan` (
 INSERT INTO `pelanggan` (`Id_pelanggan`, `username`, `password`, `nama_depan`, `nama_belakang`, `alamat`, `no_hp`, `email`) VALUES
 (1, 'eko', 'eko', 'eko', '', 'sini', 2147483647, 'eko@eko.com'),
 (8, 'asd', 'asd', 'asd', '', 'asd', 123, 'asd@hmail.com'),
-(9, 'gus', 'gus', 'gushus', '', 'gus', 123123, 'gus@gmail.com'),
-(23, 'ali', '12345', 'ali', '', 'sini', 123456786, 'ali@gmail.com');
+(9, 'gus', 'gus', 'gushus', '', 'gus', 123123, 'gus@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -129,16 +131,19 @@ CREATE TABLE `pembayaran` (
   `Tgl_pembayaran` date NOT NULL,
   `Gambar` blob NOT NULL,
   `Id_pesanan` int(5) NOT NULL,
-  `Status` varchar(7) NOT NULL
+  `Status` varchar(7) NOT NULL,
+  `Resi` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pembayaran`
 --
 
-INSERT INTO `pembayaran` (`Id_pembayaran`, `Tgl_pembayaran`, `Gambar`, `Id_pesanan`, `Status`) VALUES
-(14, '2019-11-21', 0x646f776e6c6f6164202831292e706e67, 53, 'pending'),
-(15, '2019-11-21', 0x383437373131365f525f5a303031412e6a7067, 55, 'pending');
+INSERT INTO `pembayaran` (`Id_pembayaran`, `Tgl_pembayaran`, `Gambar`, `Id_pesanan`, `Status`, `Resi`) VALUES
+(14, '2019-11-24', 0x313832303331353338382e6a7067, 53, 'sudah', '123123'),
+(15, '2019-11-21', 0x383437373131365f525f5a303031412e6a7067, 55, 'sudah', '123'),
+(16, '2019-11-24', 0x313832303331353338382e6a7067, 52, 'sudah', '231312'),
+(17, '2019-11-24', 0x444f754253794455454149714b4f4d2e6a7067, 57, 'sudah', '12312312312321');
 
 -- --------------------------------------------------------
 
@@ -163,9 +168,11 @@ CREATE TABLE `pesanan` (
 
 INSERT INTO `pesanan` (`Id_pesanan`, `Id_pelanggan`, `Tgl_pesanan`, `Tgl_pengiriman`, `Alamat`, `Status`, `Total_bayar`, `Deskripsi`) VALUES
 (51, 1, '2019-11-21', '2019-11-15', 'Cek Alamat', 'belum', 100000, 'Cek Deskripsi'),
-(52, 1, '2019-11-21', '2019-11-22', 'asdasd', 'belum', 100246, 'asdasd'),
-(53, 1, '2019-11-21', '2019-11-22', 'aa', 'pending', 100000, 'a'),
-(55, 1, '2019-11-21', '2019-11-30', 'Jember', 'pending', 369, 'Kontak saya 097');
+(52, 1, '2019-11-21', '2019-11-22', 'asdasd', 'sudah', 100246, 'asdasd'),
+(53, 1, '2019-11-21', '2019-11-22', 'aa', 'sudah', 100000, 'a'),
+(55, 1, '2019-11-21', '2019-11-30', 'Jember', 'sudah', 369, 'Kontak saya 097'),
+(56, 1, '2019-11-24', '2019-11-23', 'xcc', 'belum', 30000, 'asd'),
+(57, 1, '2019-11-24', '2019-11-29', 'Jl Tluki 1 No 105 Condong Catur Depok Sleman Yogyakarta', 'sudah', 170000, 'terima kasih');
 
 -- --------------------------------------------------------
 
@@ -186,8 +193,9 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`Id_produk`, `nama_produk`, `gambar`, `harga`, `id_kategori`) VALUES
-(22, 'Mawar Putih', 'pexels-photo-736230.jpeg', 100000, 3),
-(23, 'Mawar Merah', 'ee64d028c4add3e0ab16a997ebf449fc.jpg', 123, 1);
+(22, 'Mawar Putih 2', '1820315388.jpg', 50000, 2),
+(23, 'Mawar Merah', 'ee64d028c4add3e0ab16a997ebf449fc.jpg', 123, 1),
+(25, 'produk baru', 'Flora-Bunga-Mawar-Simbol-Kasih-Sayang-yang-Melegenda.jpg', 30000, 2);
 
 --
 -- Indexes for dumped tables
@@ -253,13 +261,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `detail_pesanan`
 --
 ALTER TABLE `detail_pesanan`
-  MODIFY `id_detail_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_detail_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
@@ -271,19 +279,19 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `Id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `Id_pesanan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `Id_pesanan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `Id_produk` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `Id_produk` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables

@@ -40,7 +40,6 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 
                     $hasilQuery=mysqli_fetch_array($queryEdit, MYSQLI_ASSOC);
                     $nama_produk=$hasilQuery['nama_produk'];
-                    $gambar=$hasilQuery['gambar'];
                     $harga=$hasilQuery['harga'];
                     $kategori=$hasilQuery['id_kategori'];
                     ?>
@@ -57,8 +56,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="hf-email">gambar</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" id="gambar" name="gambar" placeholder="gambar"
-                                    value="<?php echo $gambar; ?>">
+                                <input type="file" class="form-control" id="gambar" name="gambar" placeholder="gambar">
                                 <span class="help-block">Masukkan gambar</span>
                             </div>
                         </div>

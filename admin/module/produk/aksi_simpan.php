@@ -30,11 +30,11 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
     $file=$_FILES['gambar']['tmp_name'];
     move_uploaded_file($file,"../../../asset/images/produk/$nameFile");    
 // untuk menangkap variabel 'namaKategori' yang dikirim oleh form_tambah.php
-    $bunga = $_POST['bunga'];
+    $nama_produk = $_POST['nama_produk'];
     $harga = $_POST['harga'];
     $kategori = $_POST['kategori'];
 // query untuk menyimpan ke tabel tbl_layanan
-    $querySimpan = mysqli_query($host, "INSERT INTO produk (bunga, gambar, harga,id_kategori) VALUES ('$bunga', '$nameFile', '$harga',$kategori)");
+    $querySimpan = mysqli_query($host, "INSERT INTO produk (nama_produk, gambar, harga,id_kategori) VALUES ('$nama_produk', '$nameFile', '$harga',$kategori)");
 // jika query berhasil maka akan tampil alert dan halaman akan kembali ke daftar layanan
     if ($querySimpan) {
         echo "<script> alert('Data Produk Berhasil Masuk'); window.location = '$admin_url'+'adminweb.php?module=produk';</script>";

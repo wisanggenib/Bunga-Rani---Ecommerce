@@ -34,10 +34,10 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                 <div class="card-body">
                     <form class="form-horizontal" action="../admin/module/produk/aksi_simpan.php" method="post" enctype="multipart/form-data">
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="hf-email">Bunga</label>
+                            <label class="col-md-3 col-form-label" for="hf-email">Nama Produk</label>
                             <div class="col-md-9">
                                 <input type="text" class="form-control" id="bunga" name="nama_produk"
-                                    placeholder="Jenis Bunga">
+                                    placeholder="Nama produk">
                                 <span class="help-block">Masukkan Nama Produk</span>
                             </div>
                         </div>

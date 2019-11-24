@@ -36,9 +36,9 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="hf-email">Bunga</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" id="bunga" name="bunga"
+                                <input type="text" class="form-control" id="bunga" name="nama_produk"
                                     placeholder="Jenis Bunga">
-                                <span class="help-block">Masukkan Bunga</span>
+                                <span class="help-block">Masukkan Nama Produk</span>
                             </div>
                         </div>
                         <div class="form-group row">

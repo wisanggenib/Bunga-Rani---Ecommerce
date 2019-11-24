@@ -30,36 +30,35 @@
                     <table class="table table-responsive-sm">
                       <thead>
                         <tr>
-                          <th>Tgl_Pesanan</th>
-                          <th>Tgl_Pengiriman</th>
-                          <th>Total Bayar</th>
-                          <th>Deksripsi</th>
-                          <th>aksi</th>
+                          <th>-</th>
+                          <th>Nama Produk</th>
+                          <th>Quantity</th>
+                          <th>Harga</th>
+                          <th>Total</th>
                         </tr>
                       </thead>
                       <tbody>
                          <?php
                         include "../lib/config.php";
                         include "../lib/koneksi.php";
-                        $kueripesanan= mysqli_query($host, "SELECT * FROM pesanan WHERE status = 'pending' ");
+                        $id_pesanan = $_GET['id_pesanan'];
+                        $total = 0;
+                        $kueripesanan= mysqli_query($host, "SELECT detail_pesanan.quantity as quantity, detail_pesanan.harga as harga,produk.nama_produk as nama_produk,produk.gambar as gambar  FROM detail_pesanan JOIN pesanan ON detail_pesanan.id_pesanan = pesanan.Id_pesanan JOIN produk ON detail_pesanan.id_produk = produk.Id_produk WHERE detail_pesanan.id_pesanan = $id_pesanan");
                         while($mem=mysqli_fetch_array($kueripesanan, MYSQLI_ASSOC)){
+                          $total = $total+($mem['harga']*$mem['quantity']);
                         ?>
                        <tr>
-                          <td><?php echo $mem['Tgl_pesanan']; ?></td>
-                          <td><?php echo $mem['Tgl_pengiriman']; ?></td>
-                          <td><?php echo $mem['Total_bayar']; ?></td>
-                          <td><?php echo $mem['Deskripsi']; ?></td>                          
-                        <td>
-                            <div class="btn-group">
-                            <a href="<?php echo $admin_url; ?>adminweb.php?module=detail_pesanan&id_pesanan=<?php echo $mem['Id_pesanan']; ?>"><button class="btn btn-block btn-warning btn-sm" type="button"><i class="nav-icon icon-eye"></i></button></a>&nbsp;
-                           
-                            <!-- <a href="<?php echo $admin_url; ?>module/pesanan/aksi_hapus.php?id_pesanan=<?php echo $mem['Id_pesanan'];?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"><button class="btn btn-block btn-danger btn-sm" type="button"><i class="nav-icon icon-power"></i></button></a> -->
-                              </div>
-                          </td>
-                         
+                          <td> <img src="../asset/images/produk/<?=$mem['gambar'];?>" width="100px;" height="100px"></td>
+                          <td><?php echo $mem['nama_produk']; ?></td>
+                          <td><?php echo $mem['quantity']; ?></td>
+                          <td><?php echo $mem['harga']; ?></td>
+                          <td><?php echo $mem['harga']*$mem['quantity']; ?></td>                         
                         </tr>
                         <?php }?>
-                        
+                        <tr style="background-color: gray; color: white">
+                          <td colspan="3">Total Bayar</td>
+                          <td colspan="2" style="text-align: center">Rp. <?=$total?></td>
+                        </tr>
                       </tbody>
                     </table>
                     

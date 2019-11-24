@@ -235,6 +235,8 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
                 include "module/pesanan/form_tambah.php";
             } elseif ($_GET['module'] == 'edit_pesanan') {
                 include "module/pesanan/form_edit.php";
+            }elseif ($_GET['module'] == 'detail_pesanan') {
+                include "module/pesanan/detail_pesanan.php";
             } 
             //produk
             elseif ($_GET['module'] == 'produk') {

@@ -39,18 +39,18 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                     $queryEdit= mysqli_query($host, "SELECT * from produk JOIN kategori on produk.id_kategori = kategori.id_kategori WHERE Id_produk='$idproduk'");
 
                     $hasilQuery=mysqli_fetch_array($queryEdit, MYSQLI_ASSOC);
-                    $bunga=$hasilQuery['bunga'];
+                    $nama_produk=$hasilQuery['nama_produk'];
                     $gambar=$hasilQuery['gambar'];
                     $harga=$hasilQuery['harga'];
-                    $kategori=$hasilQuery['nama_kategori'];
+                    $kategori=$hasilQuery['id_kategori'];
                     ?>
                     <form class="form-horizontal" action="../admin/module/produk/aksi_edit.php" method="post">
                         <input type="hidden" name="id_produk" value="<?php echo $idproduk; ?>">
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="hf-email">bunga</label>
+                            <label class="col-md-3 col-form-label" for="hf-email">Nama Produk</label>
                             <div class="col-md-9">
                                 <input type="text" class="form-control" id="bunga" name="bunga" placeholder="bunga"
-                                    value="<?php echo $bunga; ?>">
+                                    value="<?php echo $nama_produk; ?>">
                                 <span class="help-block">Masukkan bunga</span>
                             </div>
                         </div>
@@ -79,10 +79,10 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                                 ?>
                                 <label class="radio-inline" style="padding-left:10px;">
                                     <?php 
-                                  if($kategori = $data['nama_kategori']){
+                                  if($kategori == $data['id_kategori']){
                                     ?>
                                     <input type="radio" name="kategori"
-                                        value="<?php echo $data['id_kategori'] ?> checked"><?php echo $data['nama_kategori'] ?>
+                                        value="<?php echo $data['id_kategori'] ?>" checked><?php echo $data['nama_kategori'] ?>
                                     <?php
                                   }else{
                                    ?>
@@ -97,9 +97,6 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                                 ?>
                             </div>
                         </div>
-                        <input type="radio" name="kategori"
-                                        value="<?php echo $data['id_kategori'] ?> checked"><?php echo $data['nama_kategori'] ?>
-                </div>
                 <div class="card-footer">
                     <button class="btn btn-sm btn-primary" type="submit">
                         <i class="fa fa-dot-circle-o"></i> Submit</button>

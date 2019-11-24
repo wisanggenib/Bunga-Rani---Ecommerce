@@ -30,35 +30,26 @@
                     <table class="table table-responsive-sm">
                       <thead>
                         <tr>
-                          <th>Tgl_Pembayaran</th>
-                          <th>Jml_Pembayaran</th>
-                          <th>No_nota</th>
-                          <th>Tgl_nota</th>
+                          <th>Nama Pemesan</th>
+                          <th>Tgl Pembayaran</th>
+                          <th>Total Bayar</th>
+                          <th>Resi</th>
                           <th>Bukti_transfer</th>
-                         
-                             <th>aksi</th>
                         </tr>
                       </thead>
                       <tbody>
                          <?php
                         include "../lib/config.php";
                         include "../lib/koneksi.php";
-                        $kueripembayaran= mysqli_query($host, "SELECT * from pembayaran");
+                        $kueripembayaran= mysqli_query($host, "SELECT pelanggan.nama_depan,pembayaran.Tgl_pembayaran,pesanan.Total_bayar,pembayaran.Resi,pembayaran.Gambar from pesanan JOIN pembayaran ON pesanan.Id_pesanan = pembayaran.Id_pesanan JOIN pelanggan ON pesanan.Id_pelanggan = pelanggan.Id_pelanggan WHERE pesanan.Status = 'sudah' AND pembayaran.Status = 'sudah'");
                         while($mem=mysqli_fetch_array($kueripembayaran, MYSQLI_ASSOC)){
                         ?>
                         <tr>
+                          <td><?php echo $mem['nama_depan']; ?></td>
                           <td><?php echo $mem['Tgl_pembayaran']; ?></td>
-                          <td><?php echo $mem['Jml_pembayaran']; ?></td>
-                          <td><?php echo $mem['No_nota']; ?></td>
-                          <td><?php echo $mem['Tgl_nota']; ?></td>
-                          <td><?php echo $mem['No_ref']; ?></td>
-                          
-                        <td>
-                            <div class="btn-group">
-                            <a href="<?php echo $admin_url; ?>module/pembayaran/aksi_hapus.php?id_pembayaran=<?php echo $mem['Id_pembayaran'];?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"><button class="btn btn-block btn-danger btn-sm" type="button"><i class="nav-icon icon-power"></i></button></a>
-                              </div>
-                          </td>
-                         
+                          <td><?php echo $mem['Total_bayar']; ?></td>
+                          <td><?php echo $mem['Resi']; ?></td>
+                          <td><img src="../asset/images/bukti/<?=$mem['Gambar']?>" style="max-width: 100px;"></td>
                         </tr>
                         <?php }?>
                       </tbody>

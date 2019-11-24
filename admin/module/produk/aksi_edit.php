@@ -25,17 +25,28 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
     include "../../../lib/koneksi.php";
 
     $idprod = $_POST['id_produk'];
-    $bunga = $_POST['bunga'];
-    $warna = $_POST['warna'];
-    $gambar = $_POST['gambar'];
+    $nama_produk = $_POST['nama_produk'];
+    $id_kategori = $_POST['kategori'];
+    $fileName = $_FILES['gambar']['name'];
     $harga = $_POST['harga'];
 
-    $queryEdit = mysqli_query($host, "UPDATE produk SET bunga = '$bunga', warna='$warna', gambar='$gambar', harga='$harga' WHERE Id_produk='$idprod'");
-    if ($queryEdit) {
-        echo "<script> alert('Data Produk Berhasil Diupdate'); window.location = '$admin_url'+'adminweb.php?module=produk';</script>";
-    } else {
-        echo "<script> alert('Data Produk Gagal Diupdate'); window.location = '$admin_url'+'adminweb.php?module=edit_produk;</script>";
+    if(empty($fileName)){
+        $queryEdit = mysqli_query($host, "UPDATE produk SET nama_produk = '$nama_produk',harga='$harga',id_kategori = '$id_kategori' WHERE Id_produk='$idprod'");
+        if ($queryEdit) {
+            echo "<script> alert('Data Produk Berhasil Diupdate'); window.location = '$admin_url'+'adminweb.php?module=produk';</script>";
+        } else {
+            echo "<script> alert('Data Produk Gagal Diupdate'); window.location = '$admin_url'+'adminweb.php?module=edit_produk;</script>";
 
+        }
+    }else{
+        move_uploaded_file($_FILES['gambar']['tmp_name'], "../../../asset/images/produk/".$_FILES['gambar']['name']);
+        $queryEdit = mysqli_query($host, "UPDATE produk SET nama_produk = '$nama_produk',harga='$harga',id_kategori = '$id_kategori',gambar='$fileName' WHERE Id_produk='$idprod'");
+        if ($queryEdit) {
+            echo "<script> alert('Data Produk Berhasil Diupdate'); window.location = '$admin_url'+'adminweb.php?module=produk';</script>";
+        } else {
+            echo "<script> alert('Data Produk Gagal Diupdate'); window.location = '$admin_url'+'adminweb.php?module=edit_produk;</script>";
+
+        }
     }
 }
 ?>

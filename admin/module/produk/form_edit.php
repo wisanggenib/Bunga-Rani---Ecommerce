@@ -43,12 +43,12 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                     $harga=$hasilQuery['harga'];
                     $kategori=$hasilQuery['id_kategori'];
                     ?>
-                    <form class="form-horizontal" action="../admin/module/produk/aksi_edit.php" method="post">
+                    <form class="form-horizontal" action="../admin/module/produk/aksi_edit.php" method="post" enctype='multipart/form-data'>
                         <input type="hidden" name="id_produk" value="<?php echo $idproduk; ?>">
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="hf-email">Nama Produk</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" id="bunga" name="bunga" placeholder="bunga"
+                                <input type="text" class="form-control" id="bunga" name="nama_produk" placeholder="bunga"
                                     value="<?php echo $nama_produk; ?>">
                                 <span class="help-block">Masukkan bunga</span>
                             </div>

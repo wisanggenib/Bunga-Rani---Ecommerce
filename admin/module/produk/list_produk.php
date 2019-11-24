@@ -36,7 +36,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                     <table class="table table-responsive-sm">
                       <thead>
                         <tr>
-                          <th>Bunga</th>
+                          <th>Nama Produk</th>
                           <th>harga</th>
                           <th>gambar</th>
                           <th>Kategori</th>
@@ -52,7 +52,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                         while($mem=mysqli_fetch_array($kueriproduk, MYSQLI_ASSOC)){
                         ?>
                         <tr>
-                          <td><?php echo $mem['bunga']; ?></td>
+                          <td><?php echo $mem['nama_produk']; ?></td>
                           <td><?php echo $mem['harga']; ?></td>
                           <td> <img src="../asset/images/produk/<?php echo $mem['gambar']; ?>" alt="" width="100px" height="120px"></td>
                           <td><?php echo $mem['nama_kategori']; ?></td>

@@ -63,8 +63,6 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                           <td><?php echo $mem['email']; ?></td>
                        <td>
                             <div class="btn-group">
-                            <a href="<?php echo $admin_url; ?>adminweb.php?module=edit_pelanggan&id_pelanggan=<?php echo $mem['Id_pelanggan']; ?>"><button class="btn btn-block btn-warning btn-sm" type="button"><i class="nav-icon icon-pencil"></i></button></a>&nbsp;
-                           
                             <a href="<?php echo $admin_url; ?>module/pelanggan/aksi_hapus.php?id_pelanggan=<?php echo $mem['Id_pelanggan'];?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"><button class="btn btn-block btn-danger btn-sm" type="button"><i class="nav-icon icon-power"></i></button></a>
                               </div>
                           </td>
@@ -75,7 +73,6 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
                     </table>
                     <ul class="pagination">
                       <li class="page-item">
-                        <a href="<?php echo $base_url; ?>/admin/adminweb.php?module=tambah_pelanggan"><button class="btn btn-block btn-primary" type="button">Tambah pelanggan</button></a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" href="#">Prev</a>

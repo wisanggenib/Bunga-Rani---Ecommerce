@@ -42,7 +42,7 @@
 						</div>
 						<textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" rows="6" name="alamat" placeholder="Alamat Pelanggan"><?php echo $dash['alamat']; ?></textarea>
 						<div class="of-hidden size15 m-b-20">
-							<button class="btn btn-warning"> Ubah Data </button>
+							<a href="ubah_pelanggan.php"><button class="btn btn-warning"> Ubah Data </button></a>
 						</div>
 					</p>
 					

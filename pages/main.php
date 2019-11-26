@@ -164,6 +164,7 @@
 
     <!-- New Product -->
     <section class="newproduct bgwhite p-t-45 p-b-105">
+<!-- produk terlaris -->
         <div class="container">
             <div class="sec-title p-b-60">
                 <h3 class="m-text5 t-center">
@@ -229,6 +230,74 @@
 
         </div>
     </div>
+
+</div>
+<!-- produk terbaru -->
+<div class="container" style="margin-top: 50px;">
+    <div class="sec-title p-b-60">
+        <h3 class="m-text5 t-center">
+            Produk Terbaru
+        </h3>
+    </div>
+
+    <!-- Slide2 -->
+    <div class="wrap-slick2">
+        <div class="slick2">
+
+            <?php 
+            $sql = "SELECT * FROM produk ORDER BY id_produk DESC";
+            $result = $koneksi->query($sql);
+            while($row = $result->fetch_assoc()) {
+
+              ?>
+
+              <div class="item-slick2 p-l-15 p-r-15">
+                <!-- Block2 -->
+                <div class="block2">
+                    <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
+                        <img src="asset/images/produk/<?php echo $row['gambar']; ?>" alt="IMG-PRODUCT"
+                        style="max-height:200px;">
+
+                        <div class="block2-overlay trans-0-4">
+                            <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+
+                                <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="block2-txt p-t-20" style="padding-top: 5px;">
+
+                        <h6 class="block2-newprice m-text8 p-r-5 text-center">
+                            <strong> Rp. <?php echo $row['harga']; ?> </strong>
+                        </h6>
+
+
+                        <div class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 roar"
+                        style="margin-top :5px;">
+
+                        <a href="produk-detail.php?Id_produk=<?php echo $row['Id_produk']; ?>"><button type="button" class="" style="color:white;">Pesan Sekarang</button></a>
+                    </div>
+
+                    <style type="text/css">
+                        .roar {
+                            border-radius: 0px;
+                        }
+
+                        .roar a:hover {
+                            color: #fff;
+                        }
+                    </style>
+
+                </div>
+            </div>
+        </div>
+
+    <?php  } ?>
+
+</div>
+</div>
 
 </div>
 </section>

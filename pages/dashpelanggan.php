@@ -30,7 +30,7 @@
 
 					<p class="p-b-28">
 						<div class="bo4 of-hidden size15 m-b-20">
-							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Nama Lengkap" value="<?php echo $dash['nama_pelanggan']; ?>">
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Nama Lengkap" value="<?php echo $dash['nama_depan']; ?>">
 						</div>
 
 						<div class="bo4 of-hidden size15 m-b-20">
@@ -41,13 +41,16 @@
 							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email" value="<?php echo $dash['email']; ?>">
 						</div>
 						<textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" rows="6" name="alamat" placeholder="Alamat Pelanggan"><?php echo $dash['alamat']; ?></textarea>
+						<div class="of-hidden size15 m-b-20">
+							<button class="btn btn-warning"> Ubah Data </button>
+						</div>
 					</p>
 					
 				</div>
 
 				<div class="col-md-8 p-b-30">
 					<h3 class="m-text26 p-t-15 p-b-16">
-						Keranjang Anda
+						Pesanan Belum Terbayar
 					</h3>
 
 				</div>
@@ -56,70 +59,48 @@
 				<div class="wrap-table-shopping-cart bgwhite">
 					<table class="table-shopping-cart">
 						<tr class="table-head">
-							<th class="column-1"></th>
-							<th class="column-2">Product</th>
-							<th class="column-3">Price</th>
-							<th class="column-4 p-l-70">Quantity</th>
-							<th class="column-5">Total</th>
+							<th class="column-1">Tanggal Pesan</th>
+							<th class="column-2">Tanggal Kirim</th>
+							<th class="column-3">Deskripsi</th>
+							<th class="column-3">Alamat</th>
+							<th class="column-4 p-l-70">Total Bayar</th>
+							<th class="column-5">Aksi</th>
 						</tr>
+
+						<?php
+							$sql = "SELECT * FROM pesanan  WHERE Id_pelanggan = $_SESSION[idpelanggan] and Status ='belum' ";
+							$result = $koneksi->query($sql);
+							while($row = $result->fetch_assoc()) {
+						?>
 
 						<tr class="table-row">
-							<td class="column-1">
-								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="asset/images/item-10.jpg" alt="IMG-PRODUCT">
-								</div>
-							</td>
-							<td class="column-2">Men Tshirt</td>
-							<td class="column-3">$36.00</td>
-							<td class="column-4">
-								<div class="flex-w bo5 of-hidden w-size17">
-									<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-									</button>
-
-									<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="1">
-
-									<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-									</button>
-								</div>
-							</td>
-							<td class="column-5">$36.00</td>
+							<td class="column-1"><?=$row['Tgl_pesanan']?></td>
+							<td class="column-2"><?=$row['Tgl_pengiriman']?></td>
+							<td class="column-3"><?=$row['Deskripsi']?></td>
+							<td class="column-3"><?=$row['Alamat']?></td>
+							<td class="column-4"><?=$row['Total_bayar']?></td>
+							<td class="column-5"><a href="detail_pembayaran.php?id=<?=$row['Id_pesanan']?>"><i class="fa fa-credit-card" aria-hidden="true" style="font-size:20px;"></i></a></td>
 						</tr>
-
-						<tr class="table-row">
-							<td class="column-1">
-								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="asset/images/item-05.jpg" alt="IMG-PRODUCT">
-								</div>
-							</td>
-							<td class="column-2">Mug Adventure</td>
-							<td class="column-3">$16.00</td>
-							<td class="column-4">
-								<div class="flex-w bo5 of-hidden w-size17">
-									<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-									</button>
-
-									<input class="size8 m-text18 t-center num-product" type="number" name="num-product2" value="1">
-
-									<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-									</button>
-								</div>
-							</td>
-							<td class="column-5">$16.00</td>
-						</tr>
+						<?php
+							}
+						?>
 					</table>
 				</div>
 			</div>
 
-			<div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
+			<div class="flex-w flex-sb-m p-t-25 p-b-25  p-l-35 p-r-60 p-lr-15-sm">
 
 				<div class="size10 trans-0-4 m-t-10 m-b-10">
 					<!-- Button -->
-					<a href="cart.php"><button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-						View Cart
+					<a href="detail_pesanan.php"><button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+						Semua Pesanan
+					</button></a>
+				</div>
+
+				<div class="size10 trans-0-4 m-t-10 m-b-10" style="margin-left: 10px;">
+					<!-- Button -->
+					<a href="pembayaran.php"><button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+						Semua Pembayaran
 					</button></a>
 				</div>
 			</div>

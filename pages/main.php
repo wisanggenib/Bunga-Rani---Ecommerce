@@ -5,66 +5,66 @@
             <div class="item-slick1 item1-slick1" style="background-image: url('asset/images/bg-banner-01.png');">
                 <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                     <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15"
-                        data-appear="fadeInDown">
-                        Women Collection 2018
-                    </span>
+                    data-appear="fadeInDown">
+                    Women Collection 2018
+                </span>
 
-                    <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-                        New arrivals
-                    </h2>
+                <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
+                    New arrivals
+                </h2>
 
-                    <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
+                <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
 
-                        <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-                            Shop Now
-                        </a>
-                    </div>
+                    <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+                        Shop Now
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <div class="item-slick1 item2-slick1" style="background-image: url(asset/images/master-slide-02.png);">
-                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-                    <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rollIn">
-                        Women Collection 2018
-                    </span>
+        <div class="item-slick1 item2-slick1" style="background-image: url(asset/images/master-slide-02.png);">
+            <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rollIn">
+                    Women Collection 2018
+                </span>
 
-                    <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37"
-                        data-appear="lightSpeedIn">
-                        New arrivals
-                    </h2>
+                <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37"
+                data-appear="lightSpeedIn">
+                New arrivals
+            </h2>
 
-                    <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
+            <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
 
-                        <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-                            Shop Now
-                        </a>
-                    </div>
-                </div>
+                <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+                    Shop Now
+                </a>
             </div>
-
-            <div class="item-slick1 item3-slick1" style="background-image: url(asset/images/master-slide-03.png);">
-                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-                    <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15"
-                        data-appear="rotateInDownLeft">
-                        Women Collection 2018
-                    </span>
-
-                    <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37"
-                        data-appear="rotateInUpRight">
-                        New arrivals
-                    </h2>
-
-                    <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
-
-                        <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-                            Shop Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
+
+    <div class="item-slick1 item3-slick1" style="background-image: url(asset/images/master-slide-03.png);">
+        <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+            <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15"
+            data-appear="rotateInDownLeft">
+            Women Collection 2018
+        </span>
+
+        <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37"
+        data-appear="rotateInUpRight">
+        New arrivals
+    </h2>
+
+    <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
+
+        <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+            Shop Now
+        </a>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
 <!-- Top of Featured Product-->
@@ -162,75 +162,75 @@
 		</div>
 	</section> -->
 
-<!-- New Product -->
-<section class="newproduct bgwhite p-t-45 p-b-105">
-    <div class="container">
-        <div class="sec-title p-b-60">
-            <h3 class="m-text5 t-center">
-                Featured Products
-            </h3>
-        </div>
+    <!-- New Product -->
+    <section class="newproduct bgwhite p-t-45 p-b-105">
+        <div class="container">
+            <div class="sec-title p-b-60">
+                <h3 class="m-text5 t-center">
+                    Featured Products
+                </h3>
+            </div>
 
-        <!-- Slide2 -->
-        <div class="wrap-slick2">
-            <div class="slick2">
+            <!-- Slide2 -->
+            <div class="wrap-slick2">
+                <div class="slick2">
 
-                <?php 
-						$sql = "SELECT * FROM produk";
-						$result = $koneksi->query($sql);
-						while($row = $result->fetch_assoc()) {
+                    <?php 
+                    $sql = "SELECT produk.id_produk,produk.nama_produk,produk.harga,produk.gambar, COUNT(detail_pesanan.Id_produk) as total FROM produk JOIN detail_pesanan ON produk.Id_produk = detail_pesanan.Id_produk GROUP BY detail_pesanan.id_produk ORDER BY total DESC LIMIT 4";
+                    $result = $koneksi->query($sql);
+                    while($row = $result->fetch_assoc()) {
 
-					 ?>
+                      ?>
 
-                <div class="item-slick2 p-l-15 p-r-15">
-                    <!-- Block2 -->
-                    <div class="block2">
-                        <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-                            <img src="asset/images/produk/<?php echo $row['gambar']; ?>" alt="IMG-PRODUCT"
+                      <div class="item-slick2 p-l-15 p-r-15">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
+                                <img src="asset/images/produk/<?php echo $row['gambar']; ?>" alt="IMG-PRODUCT"
                                 style="max-height:200px;">
 
-                            <div class="block2-overlay trans-0-4">
-                                <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                <div class="block2-overlay trans-0-4">
+                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
 
-                                    <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                </a>
+                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <div class="block2-txt p-t-20" style="padding-top: 5px;">
 
-                        <div class="block2-txt p-t-20" style="padding-top: 5px;">
-
-                            <h6 class="block2-newprice m-text8 p-r-5 text-center">
-                                <strong> Rp. <?php echo $row['harga']; ?> </strong>
-                            </h6>
+                                <h6 class="block2-newprice m-text8 p-r-5 text-center">
+                                    <strong> Rp. <?php echo $row['harga']; ?> </strong>
+                                </h6>
 
 
-                            <div class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 roar"
+                                <div class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 roar"
                                 style="margin-top :5px;">
 
                                 <a href="produk-detail.php?Id_produk=<?php echo $row['Id_produk']; ?>"><button type="button" class="" style="color:white;">Pesan Sekarang</button></a>
                             </div>
 
                             <style type="text/css">
-                            .roar {
-                                border-radius: 0px;
-                            }
+                                .roar {
+                                    border-radius: 0px;
+                                }
 
-                            .roar a:hover {
-                                color: #fff;
-                            }
+                                .roar a:hover {
+                                    color: #fff;
+                                }
                             </style>
 
                         </div>
                     </div>
                 </div>
 
-                <?php  } ?>
+            <?php  } ?>
 
-            </div>
         </div>
-
     </div>
+
+</div>
 </section>
 
 

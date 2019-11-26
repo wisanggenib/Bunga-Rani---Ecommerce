@@ -8,6 +8,7 @@ include "pages/main.php";
 include "template/footer.php"; 
 }else{
 include "template/header2.php";
+//include pages main
 include "pages/main.php";
 include "template/footer.php"; 
 }

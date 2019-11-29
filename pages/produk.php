@@ -25,28 +25,51 @@
 
 						<div class="filter-price p-t-22 p-b-50 bo3">
 							<div class="m-text15 p-b-17">
-								Price
+								Kategori
 							</div>
-
+							
+							<!-- pilih kategori -->
 							<div class="wra-filter-bar">
-								<div id="filter-bar"></div>
-							</div>
-
-							<div class="flex-sb-m flex-w p-t-16">
-								<div class="w-size11">
-									<!-- Button -->
-									<button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
-										Filter
-									</button>
-								</div>
-
-								<div class="s-text3 p-t-10 p-b-10">
-									Range: $<span id="value-lower">610</span> - $<span id="value-upper">980</span>
-								</div>
+								<form action="">
+								<select class="selection-2" name="users" onchange="showUser(this.value)">
+									<?php
+						  				include "lib/koneksi.php";
+						  				$kueri= mysqli_query($host, "SELECT * from kategori");
+						   				while ($kat = mysqli_fetch_array($kueri, MYSQLI_ASSOC)){
+						 			?>
+									<option value="<?=$kat['id_kategori']?>"><?=$kat['nama_kategori']?></option>
+									<?php
+										}
+									?>
+								</select>
+								</form>
+<script>
+function showUser(str) {
+    if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","getproduk.php?q="+str,true);
+        xmlhttp.send();
+    }
+}
+</script>
 							</div>
 						</div>
 
-						<div class="filter-color p-t-22 p-b-50 bo3">
+<!-- 						<div class="filter-color p-t-22 p-b-50 bo3">
 							<div class="m-text15 p-b-12">
 								Color
 							</div>
@@ -95,43 +118,16 @@
 							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
 								<i class="fs-12 fa fa-search" aria-hidden="true"></i>
 							</button>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
 				<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
 					<!--  -->
-					<div class="flex-sb-m flex-w p-b-35">
-						<div class="flex-w">
-							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
-									<option>Default Sorting</option>
-									<option>Popularity</option>
-									<option>Price: low to high</option>
-									<option>Price: high to low</option>
-								</select>
-							</div>
 
-							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
-									<option>Price</option>
-									<option>$0.00 - $50.00</option>
-									<option>$50.00 - $100.00</option>
-									<option>$100.00 - $150.00</option>
-									<option>$150.00 - $200.00</option>
-									<option>$200.00+</option>
-
-								</select>
-							</div>
-						</div>
-
-						<span class="s-text8 p-t-5 p-b-5">
-							Showing 1–12 of 16 results
-						</span>
-					</div>
 
 					<!-- Product -->
-					<div class="row">
+					<div class="row" id="txtHint">
 						<?php
 						  	include "lib/koneksi.php";
 						  	$kueriDash= mysqli_query($host, "SELECT * from produk");
@@ -142,7 +138,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="<?php echo $dash['gambar']; ?>" alt="IMG-PRODUCT">
+									<img src="asset/images/produk/<?php echo $dash['gambar']; ?>" alt="IMG-PRODUCT">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -152,16 +148,18 @@
 
 										<div class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
+											<a href="produk-detail.php?Id_produk=<?php echo $dash['Id_produk']; ?>">
 											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
 												Add to Cart
 											</button>
+										</a>
 										</div>
 									</div>
 								</div>
 
 								<div class="block2-txt p-t-20">
 									<a href="produk-detail.php" class="block2-name dis-block s-text3 p-b-5">
-										<?php echo $dash['bunga']; ?> - <?php echo $dash['warna']; ?>
+										<?php echo $dash['nama_produk']; ?>
 									</a>
 
 									<span class="block2-price m-text6 p-r-5">

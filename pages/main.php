@@ -168,7 +168,7 @@
         <div class="container">
             <div class="sec-title p-b-60">
                 <h3 class="m-text5 t-center">
-                    Featured Products
+                    PRODUK TERLARIS
                 </h3>
             </div>
 
@@ -177,7 +177,7 @@
                 <div class="slick2">
 
                     <?php 
-                    $sql = "SELECT produk.id_produk,produk.nama_produk,produk.harga,produk.gambar, COUNT(detail_pesanan.Id_produk) as total FROM produk JOIN detail_pesanan ON produk.Id_produk = detail_pesanan.Id_produk GROUP BY detail_pesanan.id_produk ORDER BY total DESC LIMIT 4";
+                    $sql = "SELECT produk.Id_produk,produk.nama_produk,produk.harga,produk.gambar, COUNT(detail_pesanan.Id_produk) as total FROM produk JOIN detail_pesanan ON produk.Id_produk = detail_pesanan.Id_produk GROUP BY detail_pesanan.id_produk ORDER BY total DESC LIMIT 4";
                     $result = $koneksi->query($sql);
                     while($row = $result->fetch_assoc()) {
 

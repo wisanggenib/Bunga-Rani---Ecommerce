@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v2.1.5
-* @link https://coreui.io
-* Copyright (c) 2018 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
-
 <?php
-include "../lib/config.php";
 session_start();
-if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
+include "../lib/config.php";
+
+if(empty($_SESSION['namauser'])){
     echo "<center>Untuk mengakses modul, Anda harus login <br>";
     echo "<a href=$admin_url><b>LOGIN</b></a></center>";
-} else { ?>
-
+}else{
+?>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <base href="./">
-    <meta charset="utf-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
+    <meta name="author" content="ﾅ「kasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <title>Bunga Rani</title>
     <!-- Icons-->
@@ -285,4 +277,6 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
 </body>
 
 </html>
-<?php } ?>
+<?php
+}
+?>

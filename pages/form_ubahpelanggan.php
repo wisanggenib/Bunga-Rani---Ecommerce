@@ -26,6 +26,11 @@ $dash = mysqli_fetch_array($kueriDash, MYSQLI_ASSOC);
 				<form action="pages/aksi_ubahuser.php" method="POST" enctype="multipart/form-data">
 					
 					<input type="text" class="form-control" name="id_pelanggan" value="<?=$id?>" style="background-color: gray" hidden>
+					
+					<div class="form-group">
+						<label for="email">Foto Profil:</label>
+						<input type="file" class="form-control" name="gambar" style="background-color: gray">
+					</div>
 
 					<div class="form-group">
 						<label for="email">Nama Depan:</label>

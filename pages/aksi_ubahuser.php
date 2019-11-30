@@ -32,15 +32,30 @@ if (empty($_SESSION['idpelanggan']) AND empty($_SESSION['pelanggan'])) {
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $fileName = $_FILES['gambar']['name'];
 
 
-    $queryEdit = mysqli_query($host, "UPDATE pelanggan SET nama_depan = '$namaDepan',nama_belakang = '$namaBelakang',alamat = '$alamat',no_hp = '$noHp',email = '$email',username = '$username',password = '$password' WHERE Id_pelanggan='$idPelanggan'");
+    if (empty($fileName)) {
+        $queryEdit = mysqli_query($host, "UPDATE pelanggan SET nama_depan = '$namaDepan',nama_belakang = '$namaBelakang',alamat = '$alamat',no_hp = '$noHp',email = '$email',username = '$username',password = '$password' WHERE Id_pelanggan='$idPelanggan'");
 
-    if ($queryEdit) {
-        echo "<script> alert('Data Kategori Berhasil Diupdate'); window.location = '../dashpelanggan.php';</script>";
-    } else {
-        echo "<script> alert('Data Kategori Gagal Diupdate'); window.location = '../ubah_pelanggan.php';</script>";
+        if ($queryEdit) {
+            echo "<script> alert('Data Kategori Berhasil Diupdate'); window.location = '../dashpelanggan.php';</script>";
+        } else {
+            echo "<script> alert('Data Kategori Gagal Diupdate'); window.location = '../ubah_pelanggan.php';</script>";
 
+        }
+    }else{
+        
+        move_uploaded_file($_FILES['gambar']['tmp_name'], "../asset/images/pelanggan/".$_FILES['gambar']['name']);
+
+        $queryEdit = mysqli_query($host, "UPDATE pelanggan SET nama_depan = '$namaDepan',nama_belakang = '$namaBelakang',alamat = '$alamat',no_hp = '$noHp',email = '$email',username = '$username',password = '$password',gambar='$fileName' WHERE Id_pelanggan='$idPelanggan'");
+
+        if ($queryEdit) {
+            echo "<script> alert('Data Kategori Berhasil Diupdate'); window.location = '../dashpelanggan.php';</script>";
+        } else {
+            echo "<script> alert('Data Kategori Gagal Diupdate'); window.location = '../ubah_pelanggan.php';</script>";
+
+        }
     }
 }
 ?>s

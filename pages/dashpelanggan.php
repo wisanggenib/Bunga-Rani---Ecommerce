@@ -19,7 +19,7 @@
 			<div class="row">
 				<div class="col-md-4 p-b-30">
 					<div class="hov-img-zoom">
-						<img src="asset/images/banner-14.jpg" alt="IMG-ABOUT">
+						<img src="asset/images/pelanggan/<?=$dash['gambar']?>" alt="IMG-ABOUT" style="max-width: 100%">
 					</div>
 				</div>
 

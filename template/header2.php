@@ -127,6 +127,20 @@ include 'lib/koneksi.php';
 										 Dashboard 
 									</a>
 								</div>
+
+								<div class="header-cart-wrapbtn" style="margin-top: 10px;">
+									<!-- Button -->
+									<a href="detail_pesanan.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										 Pemesanan 
+									</a>
+								</div>
+	
+								<div class="header-cart-wrapbtn" style="margin-top: 10px;">
+									<!-- Button -->
+									<a href="pembayaran.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										 Pembayaran 
+									</a>
+								</div>
 							</div>
 
 						</div>
@@ -140,61 +154,10 @@ include 'lib/koneksi.php';
 					<!-- NOte -->
 					<span class="linedivide1"> </span>
 
-					<div class="header-wrapicon2">
+					<a href="cart.php"><div class="header-wrapicon2">
 						<img src="asset/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
-
 						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="asset/images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="detail_pesanan.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										pemesanan
-									</a>
-								</div>
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="pembayaran.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										pembayaran
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					</div></a>
 
 				</div>
 			</div>

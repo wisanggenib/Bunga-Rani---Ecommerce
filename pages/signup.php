@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Login V18</title>
-	<meta charset="UTF-8">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="../asset/login/images/icons/favicon.ico"/>
@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="../login.php" method="post">
+				<form class="login100-form validate-form" action="../signup.php" method="post">
 					<span class="login100-form-title p-b-43">
 						Sign Up
 					</span>
@@ -44,7 +44,6 @@
 						<span class="label-input100">Username</span>
 					</div>
 					
-					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
@@ -52,25 +51,42 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
+						<input class="input100" type="text" name="nama_depan">
 						<span class="focus-input100"></span>
-						<span class="label-input100">nama</span>
+						<span class="label-input100">nama depan</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="text" name="nama_belakang">
+						<span class="focus-input100"></span>
+						<span class="label-input100">nama belakang</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
+						<input class="input100" type="text" name="alamat">
 						<span class="focus-input100"></span>
 						<span class="label-input100">alamat</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
-						<span class="focus-input100"></span>
-						<span class="label-input100">no_hp</span>
-					</div>
+						<div class="row">
+						    <div class="col-md-4 col-sm-12">
+					                <div class="wrap-input100">
+						                <input class="input100" type="text" disabled>
+				                		<span class="focus-input100"></span>
+                						<span class="label-input100">+62</span>
+					                </div>
+						    </div>
+						    <div class="col-md-8 col-sm-12">
+						            <div class="wrap-input100 validate-input" data-validate="Password is required">
+                						<input class="input100" type="number" name="no_hp">
+				                		<span class="focus-input100"></span>
+						                <span class="label-input100">no hp</span>
+					                </div>
+						    </div>
+						</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
+						<input class="input100" type="email" name="email">
 						<span class="focus-input100"></span>
 						<span class="label-input100">email</span>
 					</div>

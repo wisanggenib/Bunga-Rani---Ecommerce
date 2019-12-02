@@ -72,7 +72,7 @@
                   <div class="card-body">
                     <div class="row">
                       <?php 
-                      $kueriPembayaran = mysqli_query($host, "SELECT * FROM pembayaran JOIN pesanan ON pembayaran.Id_pesanan = pesanan.Id_pesanan WHERE pembayaran.Id_pesanan = $id_pesanan");
+                      $kueriPembayaran = mysqli_query($host, "SELECT * FROM pesanan JOIN pembayaran ON pesanan.Id_pesanan = pembayaran.Id_pesanan JOIN pelanggan ON pesanan.Id_pelanggan = pelanggan.Id_pelanggan WHERE pembayaran.Id_pesanan = $id_pesanan");
                       $hasil = mysqli_fetch_assoc($kueriPembayaran);
                       ?>
                       <div class="col-md-8 col-lg-6">
@@ -82,6 +82,8 @@
                        <form action="module/pesanan/aksi_konfirmasi.php" method="POST">
                         
                         <input type="text" class="form-control" name="id_pesanan" value="<?=$id_pesanan?>" hidden>
+                        <input type="text" class="form-control" name="nama" value="<?=$hasil['nama_depan']?>" hidden>
+                        <input type="text" class="form-control" name="total" value="<?=$total?>" hidden>
 
                         <div class="form-group">
                           <label for="harga">Total Bayar:</label>

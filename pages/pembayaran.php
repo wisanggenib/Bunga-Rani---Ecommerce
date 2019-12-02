@@ -17,7 +17,7 @@ if (empty($_SESSION['pelanggan']) AND empty($_SESSION['pass'])) {
                          <?php
                         include "lib/koneksi.php";
 
-                        $kueripembayaran= mysqli_query($host, "SELECT pesanan.Id_pesanan, pembayaran.Tgl_pembayaran,pesanan.Total_bayar,pesanan.Status,pembayaran.Resi from pembayaran JOIN pesanan ON pembayaran.Id_pesanan = pesanan.Id_pesanan");
+                        $kueripembayaran= mysqli_query($host, "SELECT pesanan.Id_pesanan, pembayaran.Tgl_pembayaran,pesanan.Total_bayar,pesanan.Status,pembayaran.Resi from pembayaran JOIN pesanan ON pembayaran.Id_pesanan = pesanan.Id_pesanan WHERE pesanan.Id_pelanggan = $_SESSION[idpelanggan]");
                         while($mem=mysqli_fetch_array($kueripembayaran, MYSQLI_ASSOC)){
                         ?>
                         <tr>

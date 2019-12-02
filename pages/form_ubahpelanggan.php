@@ -19,7 +19,7 @@ $dash = mysqli_fetch_array($kueriDash, MYSQLI_ASSOC);
 		<div class="row">
 			<div class="col-md-4 p-b-30">
 				<div class="hov-img-zoom">
-					<img src="asset/images/banner-14.jpg" alt="IMG-ABOUT">
+					<img src="asset/images/pelanggan/<?=$dash['gambar']?>" alt="IMG-ABOUT">
 				</div>
 			</div>			
 			<div class="col-md-8 p-b-30">

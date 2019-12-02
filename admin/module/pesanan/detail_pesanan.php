@@ -84,6 +84,7 @@
                         <input type="text" class="form-control" name="id_pesanan" value="<?=$id_pesanan?>" hidden>
                         <input type="text" class="form-control" name="nama" value="<?=$hasil['nama_depan']?>" hidden>
                         <input type="text" class="form-control" name="total" value="<?=$total?>" hidden>
+                        <input type="text" class="form-control" name="email" value="<?=$hasil['email']?>" hidden>
 
                         <div class="form-group">
                           <label for="harga">Total Bayar:</label>

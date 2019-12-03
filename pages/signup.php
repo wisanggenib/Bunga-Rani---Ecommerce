@@ -45,9 +45,15 @@
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
+						<input class="input100" type="password" name="password" id="iniPassword">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" id="confirmPassword">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Re-Type Password</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
@@ -97,7 +103,22 @@
 							Sign Up
 						</button>
 					</div>
+					<script type="text/javascript">
+						
+						var password = document.getElementById("iniPassword")
+						  , confirm_password = document.getElementById("confirmPassword");
 
+						function validatePassword(){
+						  if(password.value != confirm_password.value) {
+						    confirm_password.setCustomValidity("Passwords Don't Match");
+						  } else {
+						    confirm_password.setCustomValidity('');
+						  }
+						}
+
+						password.onchange = validatePassword;
+						confirm_password.onkeyup = validatePassword;
+					</script>
 				</form>
 
 				<div class="login100-more" style="background-image: url('../asset/login/images/bg-01.jpg');">

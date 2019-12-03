@@ -58,8 +58,29 @@ $dash = mysqli_fetch_array($kueriDash, MYSQLI_ASSOC);
 					</div>
 					<div class="form-group">
 						<label for="email">Password:</label>
-						<input type="password" class="form-control" name="password" value="<?=$dash['password']?>" style="background-color: gray">
+						<input type="password" id="iniPassword" class="form-control" name="password" value="<?=$dash['password']?>" style="background-color: gray">
 					</div>
+					<div class="form-group">
+						<label for="email">Ketik Ulang Password:</label>
+						<input type="password" class="form-control" id="confirmPassword" style="background-color: gray">
+					</div>
+
+					<script type="text/javascript">
+						
+						var password = document.getElementById("iniPassword")
+						  , confirm_password = document.getElementById("confirmPassword");
+
+						function validatePassword(){
+						  if(password.value != confirm_password.value) {
+						    confirm_password.setCustomValidity("Passwords Don't Match");
+						  } else {
+						    confirm_password.setCustomValidity('');
+						  }
+						}
+
+						password.onchange = validatePassword;
+						confirm_password.onkeyup = validatePassword;
+					</script>
 
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form> 

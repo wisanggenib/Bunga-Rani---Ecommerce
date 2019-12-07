@@ -114,6 +114,10 @@ if(empty($_SESSION['namauser'])){
                             <i class="nav-icon icon-handbag"></i> Kategori</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="adminweb.php?module=slider">
+                            <i class="nav-icon icon-handbag"></i> Slider</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="destroy.php">
                             <i class="nav-icon icon-logout"></i> Keluar</a>
                     </li>
@@ -179,6 +183,14 @@ if(empty($_SESSION['namauser'])){
                 include "module/kategori/form_tambah.php";
             } elseif ($_GET['module'] == 'edit_kategori') {
                 include "module/kategori/form_edit.php";
+            }
+            //slider
+            elseif ($_GET['module'] == 'slider') {
+                include "module/slider/list_slider.php";
+            } elseif ($_GET['module'] == 'tambah_slider') {
+                include "module/slider/form_tambah.php";
+            } elseif ($_GET['module'] == 'edit_slider') {
+                include "module/slider/form_edit.php";
             }
 
             //default

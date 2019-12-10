@@ -28,6 +28,9 @@ if(empty($_SESSION['namauser'])){
     <link href="asset/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -210,7 +213,7 @@ if(empty($_SESSION['namauser'])){
             </div>
         </footer>
         <!-- CoreUI and necessary plugins-->
-        <script src="asset/vendors/jquery/js/jquery.min.js"></script>
+<!--         <script src="asset/vendors/jquery/js/jquery.min.js"></script> -->
         <script src="asset/vendors/popper.js/js/popper.min.js"></script>
         <script src="asset/vendors/bootstrap/js/bootstrap.min.js"></script>
         <script src="asset/vendors/pace-progress/js/pace.min.js"></script>
@@ -220,6 +223,11 @@ if(empty($_SESSION['namauser'])){
         <script src="asset/vendors/chart.js/js/Chart.min.js"></script>
         <script src="asset/vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"></script>
         <script src="asset/js/main.js"></script>
+        <script>
+    $(document).ready(function(){
+        $('.table').DataTable();
+    });
+</script>
 </body>
 
 </html>

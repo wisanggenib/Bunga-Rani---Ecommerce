@@ -20,11 +20,11 @@ $content .='
        <p align="center">Alamat : ALAMATNYA DISINI</p>
        <hr>
     
-		<div style="padding:20px 0 10px 0; font-size:15px;">Laporan Data Anggota</div>
+		<div style="padding:20px 0 10px 0; font-size:15px;align=center;">Laporan Pemesanan</div>
 
-		<table border="1px" class="tabel">
+		<table border="1px" class="tabel" align="center">
 	<tr>
-       	<th>Id pembayaran</th>
+       	<th>No</th>
         <th>Id Pemesanan</th>
         <th>Tgl Pesan</th>
         <th>Tgl Bayar</th>

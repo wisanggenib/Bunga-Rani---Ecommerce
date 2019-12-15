@@ -15,6 +15,10 @@
 
 
 			<div class="w-size6 p-t-30 p-l-15 p-r-15 respon4">
+				
+			</div>
+
+			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
 					Social Media
 				</h4>
@@ -25,19 +29,6 @@
 						<a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
 						<a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
 					</div>
-			</div>
-
-			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
-				<h4 class="s-text12 p-b-30">
-					Map
-				</h4>
-
-				<form>
-					<div class="effect1 w-size9">
-						<input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="email@example.com">
-						<span class="effect1-line"></span>
-					</div>
-				</form>
 			</div>
 		</div>
 

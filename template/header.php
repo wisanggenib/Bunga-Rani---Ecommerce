@@ -38,6 +38,23 @@ include 'lib/koneksi.php';
 	<link rel="stylesheet" type="text/css" href="asset/css/util.css">
 	<link rel="stylesheet" type="text/css" href="asset/css/main.css">
 <!--===============================================================================================-->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        // fungsi initialize untuk mempersiapkan peta
+        function initialize() {
+        var propertiPeta = {
+            center:new google.maps.LatLng(-7.7389067,110.4546503),
+            zoom:9,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        
+        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+        var peta2 = new google.maps.Map(document.getElementById("googleMapMini"), propertiPeta);
+        }
+
+        // event jendela di-load  
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 <body class="animsition">
 
